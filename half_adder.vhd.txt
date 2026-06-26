@@ -1,0 +1,22 @@
+
+-- Dateiname: half_adder.vhdl
+-- Beschreibung: Komponente Halbaddierer
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity half_adder is
+    port (
+        a    : in  std_logic; -- Eingänge des Halbaddierers
+        b    : in  std_logic;
+        sum  : out std_logic; -- Ausgänge des Halbaddierers
+        carry: out std_logic
+    );
+end half_adder;
+
+architecture behave of half_adder is
+begin
+    sum   <= a xor b; -- Summe von a und b
+    carry <= a and b; -- Carry / Uebertrag
+end behave;
